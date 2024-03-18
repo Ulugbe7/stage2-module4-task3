@@ -9,7 +9,10 @@ public class RectangleObserver implements Observer {
     @Override
     public void handleEvent(RectangleEvent event) {
         RectangleWarehouse.getInstance().put(event.getSource().getId()
-                , new RectangleValues((event.getSource().getSideA() + event.getSource().getSideB()) * 2
-                        , event.getSource().getSideB() * event.getSource().getSideA()));
+                , new RectangleValues(
+                        event.getSource().getSideB() * event.getSource().getSideA(),
+                        (event.getSource().getSideA() + event.getSource().getSideB()) * 2
+                )
+        );
     }
 }

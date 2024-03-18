@@ -19,7 +19,7 @@ public class ChainParserBuilder {
 
         for (int i = 1; i < parsers.size(); i++) {
             if (abstractTextParser != null) {
-                abstractTextParser.setNextParser(parsers.get(i));
+                abstractTextParser.setParser(parsers.get(i));
             }
         }
         return abstractTextParser;
